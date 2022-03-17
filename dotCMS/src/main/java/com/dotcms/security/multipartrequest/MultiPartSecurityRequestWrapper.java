@@ -147,7 +147,7 @@ public class MultiPartSecurityRequestWrapper extends HttpServletRequestWrapper {
     private void testString(String lineToTest) {
         
         lineToTest = lineToTest.toLowerCase();
-        if (!lineToTest.contains("content-disposition:") || ! lineToTest.contains("filename=")) {
+        if (!lineToTest.contains("content-disposition") || ! lineToTest.contains("filename")) {
             return;
         }
         
