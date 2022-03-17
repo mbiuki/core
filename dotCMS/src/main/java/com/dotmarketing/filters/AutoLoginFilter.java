@@ -15,8 +15,7 @@ import com.dotcms.filters.interceptor.WebInterceptorDelegate;
 import com.dotcms.filters.interceptor.cas.CasAutoLoginWebInterceptor;
 import com.dotcms.filters.interceptor.dotcms.DefaultAutoLoginWebInterceptor;
 import com.dotcms.filters.interceptor.jwt.JsonWebTokenInterceptor;
-import com.dotcms.filters.interceptor.saml.SamlWebInterceptor;
-
+import com.dotcms.security.multipartrequest.MultiPartRequestSecurityWebInterceptor;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 
@@ -44,6 +43,9 @@ public class AutoLoginFilter extends AbstractWebInterceptorSupportFilter {
         delegate.add(new CasAutoLoginWebInterceptor());
         delegate.add(new DefaultAutoLoginWebInterceptor());
         delegate.add(new JsonWebTokenInterceptor());
+        delegate.add(new MultiPartRequestSecurityWebInterceptor());
+        
+        
     } // addDefaultInterceptors.
 
 
